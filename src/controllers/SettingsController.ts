@@ -11,7 +11,9 @@ class SettingsController {
             const settings = await settingsService.create({ chat, username });
             return response.status(201).json(settings);
         } catch (e) {
-            return response.status(500).json(e.message)
+            return response.status(500).json({
+                message: e.message
+            })
         }
 
     }
